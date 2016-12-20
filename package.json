@@ -1,19 +1,25 @@
 {
   "name": "electron-youtube-tv",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Youtube TV WebApp packaged as an Electron App",
+  "author": "amoshydra",
+  "productName": "YouTube TV",
   "main": "main.js",
+  "postinstall": "install-app-deps",
   "scripts": {
     "start": "electron main.js",
-    "build": "electron-packager ./ electron-youtube-tv --out=dist --appname='YouTube TV' --overwrite",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "build --dir",
+    "dist": "build"
   },
-  "author": "",
+  "build": {
+    "appId": "com.amoshydra.electron.youtubetv"
+  },
   "license": "ISC",
-  "dependencies": {
-    "electron": "^1.4.12"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "electron-packager": "^8.4.0"
+    "7zip-bin-win": "^2.0.2",
+    "electron": "^1.4.12",
+    "electron-builder": "^10.9.2"
   }
 }
