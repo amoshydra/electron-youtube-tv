@@ -1,7 +1,7 @@
 {
   "name": "electron-youtube-tv",
-  "version": "0.0.1",
-  "description": "Youtube TV WebApp packaged as an Electron App",
+  "version": "0.0.2",
+  "description": "YouTube TV WebApp packaged as an Electron App",
   "author": "amoshydra",
   "productName": "YouTube TV",
   "main": "main.js",

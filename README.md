@@ -11,5 +11,5 @@ yarn start
 
 ## Distributing
 ```
-npm run dist
+yarn run dist
 ```

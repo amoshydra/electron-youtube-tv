@@ -32,7 +32,6 @@ app.on('ready', function() {
   });
 
   mainWindow.on('close', (e) => {
-    console.log(e);
     e.preventDefault();
     mainWindow.hide();
     mainWindow.setSkipTaskbar(true);
