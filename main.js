@@ -2,7 +2,7 @@
 
 const electron = require('electron');
 const urlChecker = require('./libs/urlChecker');
-const Tray = require('./controllers/tray');
+const tray = require('./controllers/tray');
 const { app, BrowserWindow, webContents } = electron;
 
 app.on('ready', function() {
@@ -14,7 +14,7 @@ app.on('ready', function() {
     show: false
   });
   mainWindow.setMenu(null);
-  Tray.init(mainWindow);
+  tray.init(mainWindow);
 
   mainWindow.webContents.on('did-navigate-in-page', (event, url, isMainFrame) => {
     urlChecker.init(url);
