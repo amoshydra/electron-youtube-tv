@@ -2,6 +2,7 @@
 
 const electron = require('electron');
 const urlChecker = require('./libs/urlChecker');
+const Tray = require('./controllers/tray');
 const { app, BrowserWindow, webContents } = electron;
 
 app.on('ready', function() {
@@ -9,9 +10,11 @@ app.on('ready', function() {
     title: 'Youtube TV',
     width: 800,
     height: 600,
-    icon: __dirname + '/favicon.ico'
+    icon: __dirname + '/favicon.ico',
+    show: false
   });
   mainWindow.setMenu(null);
+  Tray.init(mainWindow);
 
   mainWindow.webContents.on('did-navigate-in-page', (event, url, isMainFrame) => {
     urlChecker.init(url);
@@ -26,7 +29,13 @@ app.on('ready', function() {
     if (urlChecker.includePath("browse-sets")) {
       mainWindow.setFullScreen(false);
     }
+  });
 
+  mainWindow.on('close', (e) => {
+    console.log(e);
+    e.preventDefault();
+    mainWindow.hide();
+    mainWindow.setSkipTaskbar(true);
   });
 
   mainWindow.loadURL('https://www.youtube.com/tv');
