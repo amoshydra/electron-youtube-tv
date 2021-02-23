@@ -9,8 +9,8 @@
   "scripts": {
     "start": "electron main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pack": "build --dir",
-    "dist": "build"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "build": {
     "appId": "com.amoshydra.electron.youtubetv"
@@ -18,8 +18,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "7zip-bin-win": "^2.0.2",
-    "electron": "^1.4.12",
-    "electron-builder": "^10.9.2"
+    "electron": "^11.3.0",
+    "electron-builder": "^22.9.1"
   }
 }
